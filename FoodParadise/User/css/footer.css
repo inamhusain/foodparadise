@@ -1,0 +1,104 @@
+#footer {
+    background: black;
+    color: yellowgreen;
+    /* padding: 2%; */
+}
+
+.footer-title {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+    color: yellowgreen;
+}
+
+hr {
+    background: #fff;
+    width: 12%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.slog-main {
+    background: #000000b3;
+}
+
+.slog {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0;
+    line-height: 100px;
+    font-size: 20px;
+}
+
+.quts {
+    margin: 0;
+    line-height: 50px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.follow {
+    margin: 0;
+    font-size: 17px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+#footer i {
+    font-size: 25px;
+    color: #9acd32;
+    line-height: 37px;
+}
+
+.cont-ico {
+    border-radius: 34px;
+    margin-right: 6px;
+}
+
+.cont-ico:hover {
+    background: #f0f8ff;
+}
+
+.cont-ico:hover .fa {
+    color: #adff2f;
+    transition: 0.5s;
+}
+
+.cpy-stet {
+    margin: 0;
+    padding-top: 4%;
+    color: #a9a9a9;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+
+.footer-menu {
+    padding-top: 1%;
+}
+
+.footer-menu a {
+    color: #a9a9a9;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.footer-menu a:hover {
+    text-decoration: none;
+    color: #9acd32;
+}
+
+.circle {
+    margin: 0;
+    margin-bottom: -1%;
+}
+
+@media only screen and (max-width: 650px) {
+    .cpy-stet {
+        font-size: 13px;
+    }
+}

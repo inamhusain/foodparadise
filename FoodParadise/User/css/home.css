@@ -1,26 +1,19 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Nunito', sans-serif;
-}
-
-#loading {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #383A3F;
-    z-index: 9999999999;
 }
 
 
 /*  */
 
 #banner {
-    background-image: linear-gradient(90deg, #0000009c, #0000009c), url(../images/bg1.jpg);
+    background-image: linear-gradient(90deg, #0000009c, #0000009c), url(../images/bg5.jpg);
     height: 81vh;
     width: 100%;
     background-size: cover;
     color: white;
+    /* backdrop-filter: blur(10px); */
+    /* background: rgba(0, 0, 0, 0.699); */
 }
 
 #banner h1 {
@@ -61,18 +54,91 @@ body {
 /* offers */
 
 #imgs {
-    margin: 3%;
-    padding: 1%;
-    /* border: 1px solid; */
+    margin-top: 3%;
+    /* padding: 1%; */
 }
 
 #imgs:hover {
-    /* border: 1px solid; */
     transform: scale(1.05);
     transition: 0.8s ease-in-out;
-    box-shadow: 7px 7px 11px -6px;
-    transform: rotate(360deg);
-    transition: 1s ease-in-out;
+    /* box-shadow: 7px 7px 11px -6px; */
+    /* transition: 1s ease-in-out; */
+}
+
+
+/*  */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.slick-dots {
+    text-align: center;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.slick-dots li button {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    background-color: #999;
+    border: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.slick-active button {
+    background-color: black;
+}
+
+
+/* Custom Arrow */
+
+.prev {
+    color: #999;
+    position: absolute;
+    top: 38%;
+    left: -2em;
+    font-size: 1.5em;
+}
+
+.next {
+    color: #999;
+    position: absolute;
+    top: 38%;
+    right: -2em;
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 800px) {
+    .next {
+        display: none !important;
+    }
 }
 
 
@@ -85,7 +151,7 @@ body {
     border-color: #000;
     box-shadow: 0px 0px 8px -3px;
     transition: 0.5s ease-in-out;
-    border: 2px solid #000;
+    /* border: 2px solid #000; */
     width: auto;
 }
 
@@ -100,7 +166,17 @@ body {
 
 @media only screen and (max-width: 650px) {
     #card {
-        margin: 4%;
+        margin: 10%;
+    }
+    .title-h1 {
+        font-size: 25px;
+    }
+    .title-h1::after {
+        content: '';
+        background: transparent;
+    }
+    #card {
+        width: 70%;
     }
 }
 
@@ -338,5 +414,34 @@ body {
     }
     to {
         opacity: 1;
+    }
+}
+
+
+/* animation */
+
+.animation-text-home {
+    animation: anim-1 ease-in 1s;
+}
+
+.animation-p {
+    animation: anim ease-in 2s;
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes anim-1 {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
     }
 }

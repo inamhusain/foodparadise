@@ -1,7 +1,18 @@
 <?php 
 error_reporting(0);
 session_start();
-
+if(!isset($_SESSION['guest']))
+{
+    if(!isset( $_SESSION['user_email']))
+    {
+        header('location:login.php');
+    }
+}
+else
+{
+    session_destroy();
+    header('location:login.php');
+}
 $user = $_SESSION['user_email'];
 include 'conn.php';
 $grand_total=0;
@@ -28,7 +39,16 @@ if(isset($_GET['removeid']))
     ?>
     <link rel="stylesheet" href="css/cart.css">
 </head>
-<body>
+<body onload="myfunc()">
+<div id="loading" style="backdrop-filter: blur(10px);position: fixed;height: 100vh;width: 100%;background: #fff0 url(images/preloder/dish.png) no-repeat center;z-index: 99999999;background-size: 120px 120px;">
+        </div> 
+        <script>// preloder
+       
+       function myfunc()
+       {
+           document.getElementById('loading').style.display="none";
+       }</script>
+
     <?php include 'menu.php'; ?>
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -105,5 +125,6 @@ if(isset($_GET['removeid']))
         ?>
            
     </div>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

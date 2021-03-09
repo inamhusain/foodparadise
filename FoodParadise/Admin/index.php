@@ -11,6 +11,9 @@ $total_pending_orders = mysqli_num_rows($select_pending_orders_query);
 $select_delivered_orders_query = mysqli_query($con,"SELECT * FROM `orders` WHERE `status`='delivered'");
 $total_delivered_order = mysqli_num_rows($select_delivered_orders_query);
 $total_estimate_cost = 0;
+
+$select_user = mysqli_query($con,"SELECT * FROM `user`");
+$select_user_count = mysqli_num_rows($select_user) - 1;
 while($res = mysqli_fetch_array($select_delivered_orders_query))
 {
     $total_estimate_cost = $total_estimate_cost + $res['total_price'];
@@ -49,11 +52,6 @@ while($res = mysqli_fetch_array($select_delivered_orders_query))
                             <P class="inr-p"><?php echo $total_delivered_order;?></P>
                         </div>
                     </div>
-                
-                    
-                
-                   
-            
         </div>
 
         <div class="row justify-content-center">
@@ -70,11 +68,12 @@ while($res = mysqli_fetch_array($select_delivered_orders_query))
                         <P class="inr-p"><?php echo $total_estimate_cost;?></P>
                     </div>
                 </div>
-                    
-                
-                    
-               
-          
+                <div class="col-lg-3 text-center">
+                   <div class="cardd-2">
+                        <p class="title">Total users</p>
+                        <P class="inr-p"><?php echo $select_user_count;?></P>
+                    </div>
+                </div>
         </div>
 
     </div>

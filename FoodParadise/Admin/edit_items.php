@@ -92,7 +92,7 @@ $res = mysqli_fetch_array($select_item_query);
                var timer = setTimeout(function()
                 {
                     window.location.href="list_items.php"
-                }, 2000);
+                }, 1800);
            </script>
            <?php
         }

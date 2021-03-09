@@ -141,6 +141,7 @@ error_reporting(0);
                             </div>
                         </div>
                 </div>
+        </div>
     </div>
     <script>
         function changeaddress()
@@ -171,5 +172,7 @@ error_reporting(0);
            }
         }
     ?>
+
+    <?php include 'footer.php'; ?>
     </body>
 </html>

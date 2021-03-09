@@ -26,10 +26,10 @@
     </div>
  </div>
  <script>
-     var timer = setTimeout(function()
-    {
-        window.location.href="home.php"
-    }, 10100);
+    //  var timer = setTimeout(function()
+    // {
+    //     window.location.href="home.php"
+    // }, 10100);
  </script>
 </body>
 </html>

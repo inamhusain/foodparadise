@@ -1,7 +1,3 @@
-body {
-    font-family: 'Nunito', sans-serif;
-}
-
 #dis-none-css {
     display: none;
 }
@@ -82,6 +78,7 @@ body {
 
 /* sweet alert */
 
-.swal-button--confirm {
+
+/* .swal-button--confirm {
     display: none;
-}
+} */

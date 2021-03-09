@@ -1,50 +1,53 @@
 <?php 
 error_reporting(0);
+session_destroy();
 session_start();
+include 'conn.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LOGIN</title>
     <?php 
     include '../Admin/links.php';
     ?>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login-1.css">
 </head>
 <body>
-    <form method="POST">
-            <div class="container" in="main">
-                <div class="row justify-content-center inner">
-                    
-                    <div class="col-md-5 inner2">
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <h1>LOGIN</h1>
+    <div id="login">
+        <form method="POST">
+                <div class="container" in="main">
+                    <div class="row justify-content-center inner">
+                        
+                        <div class="col-md-5 inner2">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <h1>LOGIN</h1>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <p>Email</p>
-                                <input class="input" type="text" name="email">
-                                <p>Password</p>
-                                <input class="input" type="password" name="pass">
-                                <input class="btn" type="submit" name="submit" value="LOGIN">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <p>Email</p>
+                                    <input class="input" type="text" name="email" required>
+                                    <p>Password</p>
+                                    <input class="input" type="password" name="pass" required>
+                                    <input class="btn" type="submit" name="SubmitForLogin" value="LOGIN">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <a href="createaccount.php">Create Account</a>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <a href="main.php">Create Account</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php 
-            include 'conn.php';
-            if(isset($_POST['submit']))
-            {
+                <?php 
+                
+                if(isset($_POST['SubmitForLogin']))
+                {
                 $email_text = $_POST['email'];
                 $password_text = $_POST['pass'];
                
@@ -63,7 +66,7 @@ session_start();
                     if($count > 0)
                     {
                         $_SESSION['user_email']=$email_text;
-                        header("Location: intro.php");
+                        header("Location: home.php");
                     }
                     else
                     {
@@ -75,9 +78,10 @@ session_start();
                     }
                 }
             }
-            else{echo "Failed";}
+            // else{echo "Failed";}
 
-            ?>
-    </form>
+                ?>
+        </form>
+    </div>
 </body>
 </html>

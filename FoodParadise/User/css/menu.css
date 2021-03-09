@@ -1,7 +1,3 @@
-body {
-    font-family: 'Nunito', sans-serif;
-}
-
 #menu {
     background-color: #1F2124;
 }
@@ -10,6 +6,7 @@ body {
     font-size: 30px;
     line-height: 80px;
     font-weight: 600;
+    /* animation-name: NavLoad; */
 }
 
 #logo {
@@ -24,7 +21,6 @@ body {
 #menu p:hover {
     transition: 1s ease-in-out;
     cursor: context-menu;
-    /* box-shadow: inset 0px 0px 0px 22px #a7a7a7; */
     background: #a7a7a7;
 }
 
@@ -53,6 +49,7 @@ a {
 #inner-menu p {
     margin: 0;
     line-height: 35px;
+    margin-bottom: 1%;
 }
 
 #inner-menu p:hover {
@@ -116,6 +113,12 @@ a {
     .close-icon {
         display: none;
     }
+    /* .animation-menu-logo {
+        animation: NavLoad ease-in 0.5s;
+    }
+    .animation-inner-menu {
+        animation: NavLoad ease-in 0.5s;
+    } */
 }
 
 
@@ -130,23 +133,28 @@ a {
     }
 }
 
-.anim {
-    animation: ex;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
 
-@keyframes ex {
+/* end media query */
+
+
+/* animations */
+
+@keyframes NavLoad {
     0% {
-        transform: rotate(0deg);
+        /* transform: translateY(-100%); */
+        transform: translateY(-390%);
     }
     100% {
-        transform: rotate(360deg);
+        transform: translateY(0);
     }
 }
 
 
-/* img:hover {
-    transform: rotate(360deg);
-    transition: 1s ease-in-out;
+/* @keyframes forOpacity {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 } */

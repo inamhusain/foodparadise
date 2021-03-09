@@ -1,6 +1,18 @@
 <?php 
 error_reporting(0);
 session_start();
+if(!isset($_SESSION['guest']))
+{
+    if(!isset( $_SESSION['user_email']))
+    {
+        header('location:login.php');
+    }
+}
+else
+{
+    session_destroy();
+    header('location:login.php');
+}
 $user = $_SESSION['user_email'];
 include 'conn.php';
 $ID = $_GET['id']; //product id
@@ -33,10 +45,10 @@ if(isset($_POST['add_to_cart']))
     {
         ?>
         <script>swal("", "Your item has been added to cart!", "success");
-        var timer = setTimeout(function()
-        {
-            window.location.href="home.php"
-        }, 1500);
+        // var timer = setTimeout(function()
+        // {
+        //     window.location.href=".php"
+        // }, 500);
         </script>
         <?php
     }

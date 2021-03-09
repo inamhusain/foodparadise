@@ -1,6 +1,18 @@
 <?php 
 error_reporting(0);
 session_start();
+if(!isset($_SESSION['guest']))
+{
+    if(!isset( $_SESSION['user_email']))
+    {
+        header('location:login.php');
+    }
+}
+else
+{
+    session_destroy();
+    header('location:login.php');
+}
 include 'conn.php';
 $user_email = $_SESSION['user_email'];
 ?>
@@ -15,7 +27,16 @@ $user_email = $_SESSION['user_email'];
     ?>
     <link rel="stylesheet" href="css/orders.css">
 </head>
-<body>
+<body onload="myfunc()"> 
+<div id="loading" style="backdrop-filter: blur(10px);position: fixed;height: 100vh;width: 100%;background: #fff0 url(images/preloder/dish.png) no-repeat center;z-index: 99999999;background-size: 120px 120px;">
+        </div>
+        <script>// preloder
+       
+       function myfunc()
+       {
+           document.getElementById('loading').style.display="none";
+           
+       }</script>
     <?php include 'menu.php';?>
     <form method="POST">
         <div class="container-fluid">
@@ -175,6 +196,6 @@ $user_email = $_SESSION['user_email'];
                     ?>
             </div>
         </div>
-        
+        <?php include 'footer.php'; ?>
 </body>
 </html>
