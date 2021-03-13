@@ -39,7 +39,7 @@
                                     <p>Address</p>
                                     <input class="input" type="text" name="address" required>
                                     <p>Mobile no</p>
-                                    <input class="input" type="text" name="mobileno" maxlength="10" required>
+                                    <input class="input" type="number" name="mobileno" maxlength="10" required>
                                     <input class="btn" type="submit" name="submit" value="Create Account">
                                 </div>
                             </div>

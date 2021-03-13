@@ -47,7 +47,11 @@ include 'conn.php';
                     
                     <?php
                         $search_value = $_GET['search'];
-                        if($search_value == 'ALL')
+                        if($search_value == null)
+                        {
+                            $select_items_query = mysqli_query($con,"SELECT * FROM `items_master` ");
+                        }
+                        else if($search_value == 'ALL')
                         {
                             $select_items_query = mysqli_query($con,"SELECT * FROM `items_master` ");
                         }
@@ -84,15 +88,29 @@ include 'conn.php';
                                             <p><?php if($res['price']==0){echo "-";}else{echo $res['price'];}?></p>
                                         </div>
                                     </div>
-                                    <div class="row justify-content-center">
+                                    <div class="row justify-content-center mt-2">
                                         <div class="col-lg-3">
                                             <div class="btnn">
                                                 <a href="edit_items.php?id=<?php echo $res['id'];?>">Edit</a>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                        <div class="btnn">
+                                            <div class="btnn">
                                                 <a href="delete_items.php?id=<?php echo $res['id'];?>">Delete</a>
+                                            </div>
+                                        </div>
+                                        <!-- code for active or not -->
+                                        <?php 
+                                            $ADstatus = $res['status'];
+                                        ?>
+                                        <!--  -->
+                                        <div class="col-lg-3">
+                                            <div class="btnn">
+                                                <?php if($ADstatus == 'deactive'){?>
+                                                <a href="active.php?pid=<?php echo $res['id'];?>">Active</a>
+                                                <?php } else if($ADstatus == 'active'){?>
+                                            <a href="deactive.php?pid=<?php echo $res['id'];?>">Deactive</a>
+                                                <?php }?>
                                             </div>
                                         </div>
                                     </div>

@@ -48,6 +48,12 @@
                     <a href="orders_admin.php">Orders</a>
                 </div>
             </div>
+            <div class="col-md-2 mar-pad-0">
+                <div class="cont text-center">
+                    <!-- <i class="fa fa-shopping-cart"></i> -->
+                    <a href="user_details.php">Users</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>

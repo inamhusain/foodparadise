@@ -10,7 +10,9 @@ error_reporting(0);
         header('location:main.php');
     }
  }
- 
+
+//  
+
 ?>
 <!DOCTYPE html >
 <html lang="en">
@@ -34,6 +36,30 @@ error_reporting(0);
        }</script>
 
 <!-- ===================================================================================== -->
+<!-- notify about res are closed -->
+       <?php
+        date_default_timezone_set('Asia/kolkata');
+        $hour = date('G');
+        $status ;
+        if($hour<8 || $hour>22)
+        {   
+           $status = "closed";
+        }
+        else
+        {
+           $status = "open";
+        }
+        
+       if($status == "closed")
+       {
+           ?>
+           <script>
+                swal("All restaurants are CLOSED");
+           </script>
+           <?php
+       }
+       ?>
+<!--  -->
     <?php
      include 'menu.php';
     ?>
@@ -78,7 +104,7 @@ error_reporting(0);
         </div>
     </div>
 <!-- ============================================================================================ -->
-<button onclick="topFunction()" id="myBtn" class="mybtn" title="Go to top">&nbsp;&nbsp; ^ &nbsp;&nbsp;</button>
+<button onclick="topFunction()" id="myBtn" class="mybtn" title="Go to top">TOP</button>
 
     <section id="offers">
         <div class="container-fluid">
@@ -174,7 +200,30 @@ error_reporting(0);
                             
                             <div class="row" id="row-btn">
                                 <div class="col-md-12 text-center">
-                                    <a href="viewdetails.php?id=<?php echo $productID;?> "><input class="btn" type="submit" value="&#128065; view details"></a>
+                                <?php
+                                   $ADstatus = $res['status'];
+                                   if($ADstatus == "active")
+                                   {
+                                       if($status == "closed")
+                                       {
+                                           ?>
+                                        <p class="btn">CLOSE</p>
+                                        <?php
+                                       }
+                                       else if($status == "open")
+                                       {
+                                           ?>
+                                                <a class="btn" href="viewdetails.php?id=<?php echo $productID;?>">&#128065; view details</a>
+                                           <?php
+                                       }
+                                   }
+                                   else
+                                   {
+                                       ?>
+                                    <p class="btn">Currently unavailable</p>
+                                    <?php
+                                   }
+                                ?>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +301,30 @@ error_reporting(0);
                             
                             <div class="row" id="row-btn">
                                 <div class="col-md-12 text-center">
-                                    <a href="viewdetails.php?id=<?php echo $productID;?> "><input class="btn" type="submit" value="&#128065; view details" href=""> </a>
+                                <?php
+                                   $ADstatus = $res['status'];
+                                   if($ADstatus == "active")
+                                   {
+                                       if($status == "closed")
+                                       {
+                                           ?>
+                                        <p class="btn">CLOSE</p>
+                                        <?php
+                                       }
+                                       else if($status == "open")
+                                       {
+                                           ?>
+                                                <a class="btn" href="viewdetails.php?id=<?php echo $productID;?>">&#128065; view details</a>
+                                           <?php
+                                       }
+                                   }
+                                   else
+                                   {
+                                       ?>
+                                    <p class="btn">Currently unavailable</p>
+                                    <?php
+                                   }
+                                ?>
                                 </div>
                             </div>
                         </div>
@@ -331,7 +403,30 @@ error_reporting(0);
                             
                             <div class="row" id="row-btn">
                                 <div class="col-md-12 text-center">
-                                    <a href="viewdetails.php?id=<?php echo $productID;?> "><input class="btn" type="submit" value="&#128065; view details" href=""> </a>
+                                <?php
+                                   $ADstatus = $res['status'];
+                                   if($ADstatus == "active")
+                                   {
+                                       if($status == "closed")
+                                       {
+                                           ?>
+                                        <p class="btn">CLOSE</p>
+                                        <?php
+                                       }
+                                       else if($status == "open")
+                                       {
+                                           ?>
+                                                <a class="btn" href="viewdetails.php?id=<?php echo $productID;?>">&#128065; view details</a>
+                                           <?php
+                                       }
+                                   }
+                                   else
+                                   {
+                                       ?>
+                                    <p class="btn">Currently unavailable</p>
+                                    <?php
+                                   }
+                                ?>
                                 </div>
                             </div>
                         </div>
@@ -410,7 +505,30 @@ error_reporting(0);
                             
                             <div class="row" id="row-btn">
                                 <div class="col-md-12 text-center">
-                                    <a href="viewdetails.php?id=<?php echo $productID;?> "><input class="btn" type="submit" value="&#128065; view details" href=""> </a>
+                                <?php
+                                   $ADstatus = $res['status'];
+                                   if($ADstatus == "active")
+                                   {
+                                       if($status == "closed")
+                                       {
+                                           ?>
+                                        <p class="btn">CLOSE</p>
+                                        <?php
+                                       }
+                                       else if($status == "open")
+                                       {
+                                           ?>
+                                                <a class="btn" href="viewdetails.php?id=<?php echo $productID;?>">&#128065; view details</a>
+                                           <?php
+                                       }
+                                   }
+                                   else
+                                   {
+                                       ?>
+                                    <p class="btn">Currently unavailable</p>
+                                    <?php
+                                   }
+                                ?>
                                 </div>
                             </div>
                         </div>
@@ -488,7 +606,30 @@ error_reporting(0);
                             
                             <div class="row" id="row-btn">
                                 <div class="col-md-12 text-center">
-                                    <a href="viewdetails.php?id=<?php echo $productID;?> "><input class="btn" type="submit" value="&#128065; view details" href=""> </a>
+                                <?php
+                                   $ADstatus = $res['status'];
+                                   if($ADstatus == "active")
+                                   {
+                                       if($status == "closed")
+                                       {
+                                           ?>
+                                        <p class="btn">CLOSE</p>
+                                        <?php
+                                       }
+                                       else if($status == "open")
+                                       {
+                                           ?>
+                                                <a class="btn" href="viewdetails.php?id=<?php echo $productID;?>">&#128065; view details</a>
+                                           <?php
+                                       }
+                                   }
+                                   else
+                                   {
+                                       ?>
+                                    <p class="btn">Currently unavailable</p>
+                                    <?php
+                                   }
+                                ?>
                                 </div>
                             </div>
                         </div>
@@ -565,8 +706,31 @@ error_reporting(0);
                             
                             <div class="row" id="row-btn">
                                 <div class="col-md-12 text-center">
-                                    <a href="viewdetails.php?id=<?php echo $productID;?> "><input class="btn" type="submit" value="&#128065; view details" href=""> </a>
-                                </div>
+                                    <?php
+                                    $ADstatus = $res['status'];
+                                    if($ADstatus == "active")
+                                    {
+                                        if($status == "closed")
+                                        {
+                                            ?>
+                                            <p class="btn">CLOSE</p>
+                                            <?php
+                                        }
+                                        else if($status == "open")
+                                        {
+                                            ?>
+                                                    <a class="btn" href="viewdetails.php?id=<?php echo $productID;?>">&#128065; view details</a>
+                                            <?php
+                                        }
+                                    }
+                                    else
+                                    {
+                                        ?>
+                                        <p class="btn">Currently unavailable</p>
+                                        <?php
+                                    }
+                                    ?>
+                                 </div>
                             </div>
                         </div>
                     <?php

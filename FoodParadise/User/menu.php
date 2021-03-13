@@ -36,17 +36,16 @@
         <div class="row justify-content-center m-0">
             <div class="col-md-2 text-center" id="dis-none-css-in-home">
                 <p>
-                    <a href="home.php"><i class="fa fa-home"></i> Home</a>
+                    <a href="home.php"><i class="fa fa-home" accesskey="h"></i> <span style="text-decoration: underline;color: #ffa216;">H</span>ome</a>
                 </p>
             </div>
             <div class="col-md-2 text-center" id="dis-none-css">
                 <p id="category" onclick="OpenNav()">
-                <i class="fa fa-list"></i> Category
-                </p>
+                <i class="fa fa-list" accesskey="c"></i> <span style="text-decoration: underline;color: #ffa216;">C</span>ategory</p>
             </div>
             <div class="col-md-2 text-center" id="dis-none-css">
                 <p>
-                    <a href="#offers"><i class="fa fa-percent"></i> Offers </a>
+                    <a href="#offers" accesskey="o"><i class="fa fa-percent"></i> <span style="text-decoration: underline;color: #ffa216;">O</span>ffers </a>
                 </p>
             </div>
             <!-- <div class="col-md-2 text-center">
@@ -56,12 +55,12 @@
             </div> -->
             <div class="col-md-2 text-center">
                 <p>
-                    <a href="order.php"><i class="fa fa-truck"></i> Orders</a> 
+                    <a href="order.php"><i class="fa fa-truck" accesskey="r"></i> O<span style="text-decoration: underline;color: #ffa216;">r</span>ders</a> 
                 </p>
             </div>
             <div class="col-md-2 text-center">
                 <p>
-                    <a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart <span class="span text-center">(<?php echo $count_items_cart;?>)</span> </a> 
+                    <a href="cart.php"><i class="fa fa-shopping-cart" accesskey="a"></i> C<span style="text-decoration: underline;color: #ffa216;">a</span>rt <span class="span text-center">(<?php echo $count_items_cart;?>)</span> </a> 
                 </p>
             </div>
             
@@ -71,7 +70,7 @@
                   ?>
                       <div class="col-md-2 text-center">
                             <p>
-                                <a href="login.php"><i class="fa fa-user"></i> Login</a> 
+                                <a href="login.php"><i class="fa fa-user" accesskey="l"></i> <span style="text-decoration: underline;color: #ffa216;">L</span>ogin</a> 
                             </p>
                         </div>
                   <?php
@@ -81,7 +80,7 @@
                     ?>
                     <div class="col-md-2 text-center">
                         <p>
-                            <a href="user.php"><i class="fa fa-user"></i> User</a> 
+                            <a href="user.php" accesskey="u"><i class="fa fa-user"></i> <span style="text-decoration: underline;color: #ffa216;">U</span>ser</a> 
                         </p>
                     </div>
                     <?php

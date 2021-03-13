@@ -22,7 +22,7 @@ if(isset($_GET['removeid']))
 {
     $p_id_del = $_GET['removeid'];
     // echo $p_id_del;
-    $del_cart = "DELETE FROM `cart` WHERE  `product_id`=$p_id_del";
+    $del_cart = "DELETE FROM `cart` WHERE  `id`=$p_id_del";
     $del_query = mysqli_query($con,$del_cart);
     unset($_GET['removeid']);
 }
@@ -58,7 +58,7 @@ if(isset($_GET['removeid']))
                     $select_query =  mysqli_query($con,$select_cart);
                     while($res = mysqli_fetch_array($select_query))
                     {
-                        $product_id = $res['product_id'];
+                        $product_id = $res['id'];
                         $select_product = "SELECT * FROM `items_master` WHERE `id`='$product_id'";
                         $product_query = mysqli_query($con,$select_product);
                         $res_p = mysqli_fetch_array($product_query);

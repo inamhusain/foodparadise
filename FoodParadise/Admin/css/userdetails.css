@@ -1,0 +1,25 @@
+.mainofheader {
+    background: #808080;
+    border: 3px solid #000;
+    margin-top: 5% !important;
+}
+
+.headerfortable {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 2% 0% 2% 0%;
+}
+
+.rowofrow {
+    background: #e9e9e9;
+    border: 2px solid #9acd32;
+}
+
+.rowoftable {
+    font-size: 15px;
+    font-weight: 600;
+    color: #808080;
+    margin: 2% 0% 2% 0%;
+}
