@@ -87,7 +87,7 @@ include 'conn.php';
                                     <p>Address</p>
                                     <input class="input" type="text" name="address" required>
                                     <p>Mobile no</p>
-                                    <input class="input" type="text" name="mobileno" required>
+                                    <input class="input" type="text" name="mobileno" onkeyup="if(/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" maxlength="10" required>
                                     <input class="btn" type="submit" name="SubmitForAcCreation" value="Create Account">
                                 </div>
                             </div>
